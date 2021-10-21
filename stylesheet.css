@@ -82,10 +82,9 @@ header{
 
 } */
 
-.card{
-    /* test  */
-    background-color: black; 
-}   
+/* .card{
+ 
+}    */
 
 .card p{
     display: flex;
