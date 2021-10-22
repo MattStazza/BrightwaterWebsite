@@ -77,6 +77,11 @@ header{
 
 /*----------- MAIN ------------*/
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
 /* ===CARDS=== */
 .cards{
     display: flex;
@@ -97,7 +102,7 @@ header{
 }
 
 .card img{
-    width: 20em;
+    width: 30em;
     height: auto;
     padding: 0px;
     margin-bottom: 0;
@@ -107,8 +112,8 @@ header{
 /* ===BUTTONS=== */
 .buttons ul{
     list-style-type: none;
-    margin: 0 10% 10%;
-    padding: 50px 0 0 0;
+    margin: 10%;
+    padding: 25px 0 0 0;
     border-radius: 50px;
 }
 .buttons li{
@@ -223,37 +228,21 @@ h3{
 
 /*------------ ADJUST MAIN ------------*/
 
-main{
-    /* Whole main area is flex.
-    Cards ontop of the button(s). */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .cards{
-    order: 0;
-    /* When the display is large (Desktop)
-    put the cards into a grid (2x2). */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-template-rows: 1fr 1fr;
+
+    width: auto;
+    height: auto;
 }
 
 .card{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
 }
 
-.buttons{
-    /* Place button(s) below Cards */
-    order: 1;
-}
-.buttons a{
-    font-size: 2em;
-}
+
 /*-------------------------------------*/
 
 /*------------ ADJUST FOOTER ------------*/
