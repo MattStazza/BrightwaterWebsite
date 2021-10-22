@@ -107,7 +107,7 @@ header{
 /* ===BUTTONS=== */
 .buttons ul{
     list-style-type: none;
-    margin: 0;
+    margin: 0 10% 10%;
     padding: 50px 0 0 0;
     border-radius: 50px;
 }
