@@ -88,11 +88,9 @@ main{
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .card{
     margin: 15px;
 }   
-
 .card p{
     display: flex;
     flex-wrap: wrap;
@@ -100,12 +98,18 @@ main{
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .card img{
-    width: 30em;
+    width: 20em;
     height: auto;
     padding: 0px;
     margin-bottom: 0;
+}
+.card a{
+    color: black;
+}
+.card:hover{
+    /* background-color: blueviolet;
+    backdrop-filter: blur(50px); */
 }
 
 
