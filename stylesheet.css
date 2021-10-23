@@ -102,11 +102,16 @@ header{
     font-size: 1.5em;
     border-top: 1px solid rgba(255,255,255,.1);
 }
+.dropDownMenu div a:last-of-type{
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
 
 /* Close Menu Image */
 .dropDownMenu a img{
     padding-top: 35px;
     padding-left: 20px;
+    width: 2.5em;
+    height: auto;
 }
 /* Rainbow Strip Image */
 .dropDownMenu img:last-of-type{
@@ -170,7 +175,6 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 .card img{
     width: 20em;
@@ -181,9 +185,9 @@ main{
 .card a{
     color: black;
 }
-.card:hover{
-    /* background-color: blueviolet;
-    backdrop-filter: blur(50px); */
+.card:hover p{
+    font-size: 1.2em;
+    /* text-shadow: 1px 1px; */
 }
 
 
