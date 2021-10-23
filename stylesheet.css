@@ -1,6 +1,16 @@
 /* --------- GLOBAL STYLING -----------*/
-.wrapper{
-    background-color: white;
+
+/* Imorting BrightWater font */
+@font-face {
+    font-family: MorebiRounded;
+    src: url('fonts/MorebiRounded-Regular.otf');
+}
+
+h1{
+    font-family: MorebiRounded;
+    font-weight: lighter;
+    font-size: 15px;
+    margin: 0;
 }
 
 body, h2, h3, p{
@@ -8,22 +18,28 @@ body, h2, h3, p{
     font-size: 16px;
     margin: 0;
 }
-a{
-    text-decoration: none;
-    color: white;
-}
+
 h3{
+    font-family: MorebiRounded;
     font-size: 25px;
     font-weight: lighter;
     text-align: center;
     padding: 10px;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 img{
     width: 2em;
     height: auto;
-    padding: 20px;
-    margin: 0;
+
+    /* Centre all Images */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* ------------------------------------ */
 
@@ -48,11 +64,68 @@ header{
 
 .navigation{
     display: none;
+    padding: 20px;
 }
+
+.hamburger_navigation{
+    padding: 20px;
+}
+
+/* ==== DROP DOWN MENU ==== */
+
+/* Hide Drop-down-menu by default */
+.dropDownMenu{
+    display: none;
+}
+
+/* Position & style Drop-Down-Menu when active */
+.hamburger_navigation label input:checked ~ .dropDownMenu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(45, 39, 122);
+}
+
+/* Position links in Drop-Down-Menu */
+.dropDownMenu div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 25px;
+}
+/* Style links */
+.dropDownMenu div a{
+    padding: 10px;
+    font-size: 1.5em;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+/* Close Menu Image */
+.dropDownMenu a img{
+    padding-top: 35px;
+    padding-left: 20px;
+}
+/* Rainbow Strip Image */
+.dropDownMenu img:last-of-type{
+    margin: 0px;
+}
+
+/* Hide check-box */
+.hamburger_navigation label input{
+    display: none;
+}
+/* =========================== */
+
+
+
 
 .logo{
     order: 0;
     justify-content: center;
+    padding: 20px;
 }
 .logo img{
     width: 3em;
@@ -62,11 +135,12 @@ header{
 .search{
     order: 1;
     justify-content: center;
+    padding: 20px;
 }
 
 .colouredLine{
     padding: 0;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     height: 5px;
     width: 100%;
 }
