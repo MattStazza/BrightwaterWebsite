@@ -173,8 +173,9 @@ main{
 .cards{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    width: 100%;    /* Stops the horizontal scrolling bug. */
+    align-content: center;
 }
 .card{
     margin: 15px;
@@ -190,7 +191,7 @@ main{
     border-radius: 25%;
 }
 .card img{
-    width: 20em;
+    width: 18em;
     height: auto;
     padding: 0px;
     margin-bottom: 0;
