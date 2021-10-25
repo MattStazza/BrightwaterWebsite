@@ -5,22 +5,24 @@
     font-family: MorebiRounded;
     src: url('fonts/MorebiRounded-Regular.otf');
 }
+@font-face {
+    font-family: MorebiRounded_Bold;
+    src: url('fonts/MorebiRounded-Bold.ttf')
+}
+
+body, h2, h3, p{
+    font-family: MorebiRounded, sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
 
 h1{
-    font-family: MorebiRounded;
     font-weight: lighter;
     font-size: 15px;
     margin: 0;
 }
 
-body, h2, h3, p{
-    font-family: 'Urbanist', sans-serif;
-    font-size: 16px;
-    margin: 0;
-}
-
 h3{
-    font-family: MorebiRounded;
     font-size: 25px;
     font-weight: lighter;
     text-align: center;
@@ -52,9 +54,16 @@ img{
 
 
 
+
+
+
+
+
+
+
 /*---------- HEADER ------------*/
 header{
-    background-color: #202f66;
+    background: linear-gradient(to left top,rgb(25, 37, 82), rgb(39, 57, 121));
     
     display: flex;
     flex-wrap: wrap;
@@ -66,6 +75,9 @@ header{
     display: none;
     padding: 20px;
 }
+/* .navigation a:hover{
+    color: rgba(60, 200, 255, 0.445);
+} */
 
 .hamburger_navigation{
     padding: 20px;
@@ -124,9 +136,6 @@ header{
 }
 /* =========================== */
 
-
-
-
 .logo{
     order: 0;
     justify-content: center;
@@ -145,7 +154,6 @@ header{
 
 .colouredLine{
     padding: 0;
-    margin-bottom: 10px;
     height: 5px;
     width: 100%;
 }
@@ -168,7 +176,7 @@ main{
     justify-content: center;
 }
 .card{
-    /* margin: 15px; */
+    margin: 15px;
 }   
 .card p{
     display: flex;
@@ -191,12 +199,10 @@ main{
 }
 .card:hover figure{
     background-color: rgba(60, 200, 255, 0.589);
-
-    /* box-sizing: border-box; */
-    /* -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; */
-    /* border: 5px solid #202f66; */
-    box-shadow:0px 0px 0px 5px rgba(117, 32, 151, 0.664) inset;
+}
+.card:hover a p{
+    font-family: MorebiRounded_Bold;
+    font-size: 1.16em;
 }
 
 
@@ -204,21 +210,19 @@ main{
 /* ===BUTTONS=== */
 .buttons ul{
     list-style-type: none;
-    margin: 10%;
-    padding: 25px 0 0 0;
-    border-radius: 50px;
+    width: fit-content;
+    padding: 60px;
+    margin: auto;
 }
 .buttons li{
-    background: linear-gradient(rgb(118, 32, 151), rgb(90, 12, 121));
+    background: linear-gradient(rgb(133, 37, 172), rgb(81, 11, 109));
     border-radius: 25px;
 }
 .buttons a{
     display: block;
-    padding: 50px 0;
+    padding: 25px 25px;
     text-align: center;
     font-weight: bold;
-    font-size: 1.5em;
-    margin-bottom: 5px;
 }
 
 /*-----------------------------*/
@@ -228,18 +232,88 @@ main{
 
 /*----------- FOOTER ------------*/
 footer{
-    background-color: #202f66;
-    color: white;
+    /* Position content in footer vertically and in the centre*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     text-align: center;
-    font-size: 0.5em;
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+    /* Style Footer */
+    background: linear-gradient(to left top,rgb(25, 37, 82), rgb(39, 57, 121));
+    color: white;
 }
-footer p{
-    font-size: 1.3em;
+
+/* Position and style Brightwater Logo in footer */
+footer section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+footer section figure{
     margin: 0;
+    padding: 0;
 }
+footer section figure img{
+    width: 3em;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+footer section h1{
+    font-size: 2em;
+    margin: 5px;
+}
+
+/* Position and style contact div in footer */
+.contact{
+    flex-direction: column;
+    margin: 10px;
+}
+.contact p{
+    font-size: 1.2em;
+}
+.contact p:last-of-type{
+    font-family: MorebiRounded_Bold;
+    font-size: 1.5em;
+}
+
+
+.socials{
+    margin: 10px; 
+    flex-direction: column;
+}
+.socials ul{
+    display: flex;              /* Arrange items to horizontally stack */
+    justify-content: center;     /* Set alignment to the centre */
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.socials li{
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.copyRight{
+    flex-direction: column;
+    text-align: left;
+    margin: 10px 80px;
+}
+.copyRight p{
+    font-size: 0.75em;
+    margin: 5px 0;
+}
+
 /* ----------------------------- */
+
+
+
+
+
+
+
 
 
 
@@ -319,7 +393,6 @@ h3{
 
 
 /*------------ ADJUST MAIN ------------*/
-
 .cards{
     display: grid;
     grid-template-columns: auto auto;
@@ -335,9 +408,36 @@ h3{
 }
 
 
+.buttons ul{
+    padding: 80px;
+}
+.buttons a{
+    padding: 50px 50px;
+    font-size: 2em;
+}
 /*-------------------------------------*/
 
 /*------------ ADJUST FOOTER ------------*/
+footer{
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+footer section figure img{
+    width: 4em;
+    height: auto;
+}
+footer section h1{
+    padding-top: 5px;
+    font-size: 2em;
+}
+
+footer .socials{
+    font-size: 1em;
+}
+footer .socials a{
+    font-size: 1.5em;
+}
 
 
 /*---------------------------------------*/
@@ -345,33 +445,5 @@ h3{
 /* ===================================================*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* =============== MEDIUM SCREENS ====================*/
-@media screen and (max-width: 59em) and (min-width: 30em) {
-/*------------ ADJUST HEADER ------------*/
-
-/*---------------------------------------*/
-
-
-/*------------- ADJUST MAIN -------------*/
-
-/*---------------------------------------*/
-
-
-/*------------ ADJUST FOOTER ------------*/
-
-/*---------------------------------------*/
-}
-/* ===================================================*/
 
 
