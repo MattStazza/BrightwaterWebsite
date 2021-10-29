@@ -1,95 +1,78 @@
-/* --------- GLOBAL STYLING -----------*/
-
+/* ===================== GLOBAL STYLING =====================*/
 /* Imorting BrightWater font */
 @font-face {
     font-family: MorebiRounded;
     src: url('fonts/MorebiRounded-Regular.otf');
 }
-@font-face {
-    font-family: MorebiRounded_Bold;
-    src: url('fonts/MorebiRounded-Bold.ttf')
-}
+/* -------------------------- */
 
-body, h2, h3, p{
+/* Default styling */
+html, body, h2, p{
     font-family: MorebiRounded, sans-serif;
     font-size: 16px;
     margin: 0;
 }
-
-h1{
+/* Styling for heading 1 & 3 */
+h1, h3{
     font-weight: lighter;
     font-size: 15px;
     margin: 0;
 }
-
 h3{
     font-size: 25px;
-    font-weight: lighter;
     text-align: center;
     padding: 10px;
 }
-
 a{
+    /* All hyper-links are white and have no decoration */
     text-decoration: none;
     color: white;
 }
-
 img{
+    /* Default size for images */
     width: 2em;
     height: auto;
-
     /* Centre all Images */
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-/* ------------------------------------ */
+/* ===================== END - GLOBAL STYLING ==================*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*---------- HEADER ------------*/
+/* ====================== HEADER ============================ */
 header{
+    /* Linear header background color */
     background: linear-gradient(to left top,rgb(25, 37, 82), rgb(39, 57, 121));
-    
+    /* Set header as a flex element */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
-
+ /* Desktop navigation disabled by default */
 .navigation{
     display: none;
-    padding: 20px;
 }
-/* .navigation a:hover{
-    color: rgba(60, 200, 255, 0.445);
-} */
-
+/* Add a shadow when hovering over 
+ desktop navigation links */
+.navigation a:hover{
+    text-shadow: 2px 2px black;
+}
+ /* Add padding to menu button */
 .hamburger_navigation{
     padding: 20px;
 }
 
-/* ==== DROP DOWN MENU ==== */
 
+/* ============ DROP DOWN MENU ========== */
 /* Hide Drop-down-menu by default */
 .dropDownMenu{
     display: none;
 }
-
 /* Position & style Drop-Down-Menu when active */
 .hamburger_navigation label input:checked ~ .dropDownMenu {
     display: block;
@@ -100,25 +83,26 @@ header{
     height: fit-content;
     background-color: #202f66;
 }
-
-/* Position links in Drop-Down-Menu */
+/* Position links in Drop-Down-Menu
+ - stacked vertically with flex */
 .dropDownMenu div{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 25px;
 }
-/* Style links */
+/* Style links in drop-down-menu*/
 .dropDownMenu div a{
     padding: 10px;
     font-size: 1.5em;
     border-top: 1px solid rgba(255,255,255,.1);
 }
+/* Add border to at the bottom of last link */
 .dropDownMenu div a:last-of-type{
     border-bottom: 1px solid rgba(255,255,255,.1);
 }
-
-/* Close Menu Image */
+/* Style Close Menu Image 
+ - so that it is in the same position as menu button*/
 .dropDownMenu a img{
     padding-top: 35px;
     padding-left: 20px;
@@ -129,47 +113,54 @@ header{
 .dropDownMenu img:last-of-type{
     margin: 0px;
 }
-
 /* Hide check-box */
 .hamburger_navigation label input{
     display: none;
 }
-/* =========================== */
+/* ========= END - DROP DOWN MENU ========== */
 
+
+/* Position the Logo to the left &
+ add padding */
 .logo{
     order: 0;
-    justify-content: center;
     padding: 20px;
 }
+ /* Increase size of Logo image  */
 .logo img{
     width: 3em;
     height: auto;
 }
-
+/* Position the Search icon to the right &
+ add badding */
 .search{
     order: 1;
-    justify-content: center;
     padding: 20px;
 }
-
+ /* Position the colored line border */
 .colouredLine{
     padding: 0;
     height: 5px;
     width: 100%;
 }
-/*-----------------------------*/
+/* ====================== END - HEADER ============================ */
 
 
 
 
-/*----------- MAIN ------------*/
 
+/* ========================= MAIN ================================= */
+/* Set the Main Content area to flex 
+- Content stacked vertically (cards ontop of button(s)) */
 main{
     display: flex;
     flex-direction: column;
 }
 
-/* ===CARDS=== */
+
+/* ============= CARDS ============ */
+/* Set the cards to flex, stack vertically &
+ position to the centre */
 .cards{
     display: flex;
     flex-wrap: wrap;
@@ -177,140 +168,171 @@ main{
     justify-content: center;
     align-content: center;
 }
+/* Each card has 15px space around it. */
 .card{
     margin: 15px;
 }   
+/* Centre the text below the card */
 .card p{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    font-weight: bold;
 }
+/* Give the card a rounded, coloured background. */
 .card figure{
     background-color: rgba(60, 200, 255, 0.445);
     border-radius: 25%;
 }
+/* Enlarge the card's image and strip
+of padding and bottom margin */
 .card img{
     width: 18em;
     height: auto;
     padding: 0px;
     margin-bottom: 0;
 }
+/* Make the card links text black. (default is white) */
 .card a{
     color: black;
 }
+/* Slighly darken the card's background
+colour on hover to indicate that it is clickable. */
 .card:hover figure{
     background-color: rgba(60, 200, 255, 0.589);
 }
+/* Bold text on hover */
 .card:hover a p{
-    font-family: MorebiRounded_Bold;
-    font-size: 1.16em;
+    font-weight: bold;
 }
+/* ======== END - CARDS =========== */
 
 
-
-/* ===BUTTONS=== */
+/* ============ BUTTONS =========== */
+/* Strip button's of default decorations,
+position in centre of screen and make content fit width. */
 .buttons ul{
     list-style-type: none;
-    width: fit-content;
-    padding: 60px;
-    margin: auto;
+    width: fit-content;     /* Limit to contents size */
+    padding: 60px;          /* Add space around */
+    margin: auto;           /* Position in centre */
 }
+/* Give the button(s) a linear rounded linear
+background colour (light to dark) */
 .buttons li{
     background: linear-gradient(rgb(133, 37, 172), rgb(81, 11, 109));
     border-radius: 25px;
 }
+/* Position and style button hyper-link */
 .buttons a{
     display: block;
     padding: 25px 25px;
     text-align: center;
     font-weight: bold;
 }
-
-/*-----------------------------*/
-
-
+/* ======== END - BUTTONS =========== */
+/* ====================== END - MAIN =============================== */
 
 
-/*----------- FOOTER ------------*/
+
+
+
+/* ====================== FOOTER =================================== */
 footer{
-    /* Position content in footer vertically and in the centre*/
+    /* Position content in footer vertically and centred*/
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-
-    /* Style Footer */
+    /* Colour Footer (white on dark (linear) background) */
     background: linear-gradient(to left top,rgb(25, 37, 82), rgb(39, 57, 121));
     color: white;
 }
 
-/* Position and style Brightwater Logo in footer */
+/* ========= BRIGHTWATER LOGO =========== */
+/* Set to flex so the Logo is on the left &
+the text is on the right. Centre & add margin. */
 footer section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 30px 10px 10px 10px;
 }
+/* Strip figure of padding & margin space. */
 footer section figure{
     margin: 0;
     padding: 0;
 }
+/* Resize Logo img */
 footer section figure img{
     width: 3em;
     height: auto;
-    margin: 0;
-    padding: 0;
 }
+/* Enlarge 'Brightwater' text & add margin */
 footer section h1{
     font-size: 2em;
     margin: 5px;
 }
+/* ========= END - BRIGHTWATER LOGO ====== */
 
-/* Position and style contact div in footer */
+
+/* ========= CONTACT NUMBER ============== */
+/* Use flex to put the phone number under the text &
+add space around. */
 .contact{
     flex-direction: column;
     margin: 10px;
 }
+/* Increase the text size */
 .contact p{
     font-size: 1.2em;
 }
+/* Bold the phone number */
 .contact p:last-of-type{
-    font-family: MorebiRounded_Bold;
-    font-size: 1.5em;
+    font-weight: bold;
 }
+/* ========= END - CONTACT NUMBER ========= */
 
 
+/* ========= SOCIAL MEDIA LINKS =========== */
+/* Use flex to put the social media icons under the text &
+add space around. */
 .socials{
-    margin: 10px; 
+    margin: 20px; 
     flex-direction: column;
 }
+/* Make social icon container flex to arrange horizontally */
 .socials ul{
-    display: flex;              /* Arrange items to horizontally stack */
-    justify-content: center;     /* Set alignment to the centre */
-
-    list-style-type: none;
+    display: flex;              /* Arrange items to horizontally */
+    justify-content: center;    /* Set alignment to the centre */
+    list-style-type: none;      /* Strip of default styling */
+    /* Remove padding & margin */
     margin: 0;
     padding: 0;
 }
+/* Resize social icons and add space around each (10px) */
 .socials li{
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 10px;
 }
+/* ====== END - SOCIAL MEDIA LINKS ======== */
 
+
+/* ========= COPY RIGHT TEXT ============== */
+/* Stack content vertically with flex &
+align to centre. */
 .copyRight{
     flex-direction: column;
-    text-align: left;
+    text-align: center;
+    /* Add space on top (10px) & the sides (60px) */
     margin: 10px 60px;
 }
+/* Resize and space out text */
 .copyRight p{
     font-size: 0.75em;
     margin: 5px 0;
 }
-
-/* ----------------------------- */
-
-
+/* ======= END - COPY RIGHT TEXT =========== */
+/* ====================== END - FOOTER ===============================*/
 
 
 
@@ -326,125 +348,136 @@ footer section h1{
 
 
 
+/*======================== RESPONSIVE DESIGN ============================================ */
+
+/* =============== CARD SPECIFIC CHANGES ====================*/
+/* Use Grid layout for cards before switching to overall
+ layout change for larger screens. */
+
+ @media screen and (min-width: 45em) and (max-width: 60em){
+    /* Swap display method from flex to grid to
+     position the cards (2x2 grid) */
+     .cards{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+/* =============== END - CARD SPECIFIC CHANGES ==============*/
 
 
 
 
-/*============== RESPONSIVE DESIGN =============== */
-
-
-/* =============== LARGE SCREENS ====================*/
+/* =============== CHANGE LAYOUT FOR LARGER SCREENS ====================*/
 @media screen and (min-width: 60em) {
-
-/*----------- ADJUST BLANKET STYLING -----------*/
+/*----------- ADJUST BLANKET STYLING ------------------------*/
+/* Increase heading 3 size and add extra padding. */
 h3{
     font-size: 2em;
     padding-top: 25px;
     padding-bottom: 25px;
 }
-/* ---------------------------------------------- */
-    
+/* ----------- END BLANKET STYLING------------ --------------*/
 
-/*----------- ADJUST HEADER -----------*/
-/* Swap Navigation Type (Bar to Hamburger)  */
+
+
+/*--------------- ADJUST HEADER -----------------------------*/
+/* Swap Navigation Type (Bar to Hamburger Menu Icon) */
+/* Use flex to centre and evenly position navigation links */
 .navigation{
-    text-decoration: none;
-    color: white;
-
     display: flex;
     flex: 1 0 40%;
     justify-content: space-between;
+    align-items: center;
+    color: white;
 }
+/* Increase text size and add padding */
 .navigation h2, a, p{
     padding-left: 10px;
     padding-right: 10px;
-    text-align: center;
     font-size: 1.25em;
 }
+/* Hide menu icon (for drop-down navigation) */
 .hamburger_navigation{
     display: none;
 }
-
-/* Adjust Logo size and position  */
+/* Use flex to position the Logo
+to the left & evenly space with other navigation elements. */
 .logo{
     display: flex;
     flex: 1 0 auto;
     order: -1;
-
     justify-content: left;
 }
+/* Resize the logo image */
 .logo img{
     width: 4em;
     height: auto;
 }
-
-
-/* Adjust search icon size and position  */
+/* Use flex to position the Search icon
+ to the right & evenly space with other navigation elements. */
 .search{
     display: flex;
     flex: 1 0 auto;
     order: 1;
-
     justify-content: right;
 }
+/* Resize the search icon image */
 .search img{
     width: 3em;
     height: auto;
 }
-/*-------------------------------------*/
+/*--------------- END - ADJUST HEADER -----------------------*/
 
 
-/*------------ ADJUST MAIN ------------*/
+
+/*------------------- ADJUST MAIN ---------------------------*/
+/* Swap display method from flex to grid to
+ position the cards (2x2 grid) */
 .cards{
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 1fr 1fr;
-
-    width: auto;
-    height: auto;
 }
-
-.card{
-    display: flex;
-    flex-direction: column;
-}
-
-
+/* Add padding around the button(s) */
 .buttons ul{
     padding: 80px;
 }
+/* Increase font & padding of button hyper-link */
 .buttons a{
     padding: 50px 50px;
     font-size: 2em;
 }
-/*-------------------------------------*/
+/*---------------- END - ADJUST MAIN --------------------------*/
 
-/*------------ ADJUST FOOTER ------------*/
-footer{
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 50px;
+
+
+/*------------------- ADJUST FOOTER ---------------------------*/
+/* Put the first three elements into a row
+ (Logo, Socials and Contact) */
+footer div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
 }
+/* Increase size of logo */
 footer section figure img{
     width: 4em;
     height: auto;
 }
+/* Better align 'Brightwater' text */
 footer section h1{
     padding-top: 5px;
-    font-size: 2em;
 }
-
-footer .socials{
-    font-size: 1em;
-}
+/* Increase social media icon sizes */
 footer .socials a{
     font-size: 1.5em;
 }
-
-
-/*---------------------------------------*/
+/* Increase contact nnumber font size */
+footer .contact{
+    font-size: 1.4em;
 }
-/* ===================================================*/
+/*---------------- END - ADJUST FOOTER --------------------------*/
+}
+/* ============================ END - RESPONSIVE DESIGN====================================*/
 
 
 
