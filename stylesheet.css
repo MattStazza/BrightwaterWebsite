@@ -475,10 +475,70 @@ footer .socials a{
 footer .contact{
     font-size: 1.4em;
 }
+
+
+
+/* Reference text styling for large displays. */
+.references div h3, .references div p, .references div a{
+    text-align: left;
+}
 /*---------------- END - ADJUST FOOTER --------------------------*/
 }
 /* ============================ END - RESPONSIVE DESIGN====================================*/
 
 
+
+
+
+
+
+
+
+
+/* ========= REFERENCES ========= */
+/* References link styling (in footer) */
+.copyRight p a{
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.references{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+.references div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.references div div{
+    flex-direction: column;
+}
+.references img{
+    width: 15em;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+.references h3{
+    font-size: 1.5em;
+    padding: 0;
+}
+.references p{
+    padding: 0;
+}
+.references a{
+    color: purple;
+    font-weight: bold;
+    font-size: 1.25em;
+    text-decoration: underline;
+}
+/* ========= END - REFERENCES ========= */
 
 
